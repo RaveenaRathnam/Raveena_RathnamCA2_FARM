@@ -1,6 +1,6 @@
 package org.example;
 
-public class MilkTank {
+public class MilkTank{
     public static final int STANDARD_TANK_CAPACITY = 2000;
     //fields
     private String name;
