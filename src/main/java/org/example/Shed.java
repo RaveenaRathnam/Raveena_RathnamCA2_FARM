@@ -4,16 +4,16 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class Shed {
-    private ArrayList<Animal> animalList;
+    private ArrayList<Collection<Animal>> animalList;
     private MilkingMachine milkingMachine;
     private MilkTank milkTank;
     //Constructor
     public Shed(MilkTank tank){
         this.milkTank=tank;
-        this.animalList=new ArrayList<>();
+        this.animalList=new ArrayList<Collection<Animal>>();
     }
-    public void addAnimal(Animal animal){
-         animalList.add(animal);
+    public void addAnimal(Collection<Animal> animals){
+         animalList.add(animals);
     }
 
     public void installMilkingMachine(MilkingMachine milkingMachine){
@@ -39,7 +39,7 @@ public void milkAnimal(Collection<Animal> animals){
         return "Shed{" +
                 "animalList=" + animalList +
                 ", milkingMachine=" + milkingMachine +
-                ", milkTank=" + milkTank +
+                "\n"+
                 '}';
     }
 //milkingMachine.milk(animalList);

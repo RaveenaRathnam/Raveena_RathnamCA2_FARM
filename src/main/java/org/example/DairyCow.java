@@ -23,6 +23,8 @@ public class DairyCow extends Animal implements IMilkable {
     //return-a number between 0 and max.i.e.udderCapacity
     //return Random(0,udderCapacity);
 //}
+
+    //milk method specific to cow
     public DairyCow(){
      super();
      this.udderCapacity=RANDOM(MAX_CAPACITY,MIN_CAPACITY);
@@ -36,13 +38,16 @@ public class DairyCow extends Animal implements IMilkable {
         return getName();
     }
     public double getCapacity() {
-        return RANDOM(0,this.udderCapacity);
+        return this.udderCapacity;
     }
 
     @Override
     public String toString() {
-        return super.toString() +"{" +
-                "udderCapacity=" + udderCapacity +
-                '}';
+        return super.toString() +","+
+                "udderCapacity=" + udderCapacity ;
+    }
+
+    public double milk() {
+        return RANDOM(0,this.udderCapacity);   /// return a random number betwee
     }
 }

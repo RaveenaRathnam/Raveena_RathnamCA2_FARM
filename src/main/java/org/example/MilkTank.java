@@ -40,7 +40,7 @@ public class MilkTank{
         return   this.capacity-this.currentAmount;
     }
     public void addToTank(double addAmount){
-        for(int i=0;i<=addAmount;i++)
+        for(int i=0;i<addAmount;i++)
         {
             if(this.currentAmount<this.capacity)
             {

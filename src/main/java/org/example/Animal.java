@@ -46,9 +46,8 @@ public abstract class Animal {
 
     @Override
     public String toString() {
-        return  this.getClass().getName()+
+        return  this.getClass().getName() +
                 "ID=" + ID +
-                ", name='" + name + '\'' +
-                '}';
+                ", name='" + name + '\'' ;
     }
 }
