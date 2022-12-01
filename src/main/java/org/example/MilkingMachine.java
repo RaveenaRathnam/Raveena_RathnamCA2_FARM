@@ -32,8 +32,7 @@ public class MilkingMachine  {
 
     @Override
     public String toString() {
-        return "{" +
-                "" + milkTank +
+        return "{" + milkTank +
                 '}';
     }
 }

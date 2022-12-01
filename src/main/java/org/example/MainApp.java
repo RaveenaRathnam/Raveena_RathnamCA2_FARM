@@ -44,19 +44,20 @@ public class MainApp {
 
         System.out.println("Using ArrayList<Animal>");
 
-        ArrayList<Animal> cowList=new ArrayList<>();
-        cowList.add(DC1);
-        cowList.add(DC2);
-        cowList.add(DC3);
-        displayAnimalList(cowList);
 
         MilkTank milkTank1=new MilkTank("DairyCowTank",1500);
-        milkTank1.addToTank(1300);
         MilkingMachine milkingMachine1=new MilkingMachine();
-        milkingMachine1.setMilkTank(milkTank1);
+
+
         Shed shed1=new Shed(milkTank1);
-        shed1.addAnimal(cowList);
+
         shed1.installMilkingMachine(milkingMachine1);
+
+        shed1.addAnimal(DC1);
+        shed1.addAnimal(DC2);
+        shed1.addAnimal(DC3);
+
+
         System.out.println(shed1.toString());
 //
 

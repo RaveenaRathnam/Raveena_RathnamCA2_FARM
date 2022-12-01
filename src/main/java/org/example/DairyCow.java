@@ -2,8 +2,8 @@ package org.example;
 
 public class DairyCow extends Animal implements IMilkable {
 
-    private static  int MAX_CAPACITY=20;
-    private static  int MIN_CAPACITY=40;
+    private static final int MAX_CAPACITY=20;
+    private static final int MIN_CAPACITY=40;
     private int udderCapacity;
 
     //random amt of milk in range min->max
@@ -41,13 +41,14 @@ public class DairyCow extends Animal implements IMilkable {
         return this.udderCapacity;
     }
 
-    @Override
-    public String toString() {
-        return super.toString() +","+
-                "udderCapacity=" + udderCapacity ;
-    }
-
     public double milk() {
         return RANDOM(0,this.udderCapacity);   /// return a random number betwee
     }
+    @Override
+    public String toString() {
+        return super.toString() +","+
+                "udderCapacity=" + udderCapacity+"\n" ;
+    }
+
+
 }
