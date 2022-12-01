@@ -42,7 +42,7 @@ public class DairyCow extends Animal implements IMilkable {
     }
 
     public double milk() {
-        return RANDOM(0,this.udderCapacity);   /// return a random number betwee
+        return RANDOM(this.udderCapacity,0);   /// return a random number betwee
     }
     @Override
     public String toString() {

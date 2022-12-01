@@ -35,13 +35,15 @@ public class MainApp {
 
         DairyCow DC1=new DairyCow("kosy");
         System.out.println(DC1.toString());
-
+        DC1.milk();
         DairyCow DC2=new DairyCow();
+        DC2.milk();
         System.out.println(DC2.toString());
 
         DairyCow DC3=new DairyCow();
         System.out.println(DC3.toString());
-
+        DC3
+                .milk();
         System.out.println("Using ArrayList<Animal>");
 
 
@@ -57,6 +59,7 @@ public class MainApp {
         shed1.addAnimal(DC2);
         shed1.addAnimal(DC3);
 
+        shed1.milkAnimal(shed1.getAnimalList());
 
         System.out.println(shed1.toString());
 //

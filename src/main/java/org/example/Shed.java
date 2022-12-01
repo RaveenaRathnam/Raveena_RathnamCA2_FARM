@@ -16,6 +16,14 @@ public class Shed {
          animalList.add(animal);
     }
 
+    public ArrayList<Animal> getAnimalList() {
+        return animalList;
+    }
+
+    public void setAnimalList(ArrayList<Animal> animalList) {
+        this.animalList = animalList;
+    }
+
     public void installMilkingMachine(MilkingMachine milkingMachine){
         this.milkingMachine=milkingMachine;
         milkingMachine.setMilkTank(this.milkTank);
@@ -36,7 +44,7 @@ public void milkAnimal(Collection<Animal> animals){
 
     @Override
     public String toString() {
-        return "Shed{" +
+        return  "Shed{" +
                 "animalList=" + animalList.toString() +
                 ", milkingMachine=" + milkingMachine +
                 '}';
