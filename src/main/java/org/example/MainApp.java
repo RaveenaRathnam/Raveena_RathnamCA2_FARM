@@ -33,14 +33,14 @@ public class MainApp {
     }
     public void start() {
 
-        DairyCow DC1=new DairyCow("kosy");
+        Goat DC1=new Goat("kosy");
         System.out.println(DC1.toString());
         DC1.milk();
-        DairyCow DC2=new DairyCow();
+        Goat DC2=new Goat();
         DC2.milk();
         System.out.println(DC2.toString());
 
-        DairyCow DC3=new DairyCow();
+        Goat DC3=new Goat();
         System.out.println(DC3.toString());
         DC3
                 .milk();

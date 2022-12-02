@@ -2,8 +2,8 @@ package org.example;
 
 public class DairyCow extends Animal implements IMilkable {
 
-    private static final int MAX_CAPACITY=20;
-    private static final int MIN_CAPACITY=40;
+    private static final int MIN_CAPACITY=20;
+    private static final int MAX_CAPACITY=40;
     private int udderCapacity;
 
     //random amt of milk in range min->max

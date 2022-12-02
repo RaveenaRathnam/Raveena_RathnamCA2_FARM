@@ -40,7 +40,7 @@ public abstract class Animal {
     }
     public int RANDOM(int max,int min){
         Random rand=new Random();
-        int x= rand.nextInt(max)+(min+1);
+        int x=rand.nextInt((max-min)+1)+min;
         return x;
     }
 
