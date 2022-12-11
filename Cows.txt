@@ -1,0 +1,6 @@
+DairyCow,Kosy
+DairyCow,Tom
+DairyCow,Maggi
+BeefCow,Anna,700,12,DOMINANT
+BeefCow,bill,955,10,RECESSIVE
+BeefCow,Mag,850,8,AUTOSOMAL

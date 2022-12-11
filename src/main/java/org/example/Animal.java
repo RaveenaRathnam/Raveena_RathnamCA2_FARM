@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.Random;
 
-public abstract class Animal {
+public abstract class Animal implements Comparable<Animal> {
 
     private int ID;
     private String name;
@@ -40,14 +40,26 @@ public abstract class Animal {
     }
     public int RANDOM(int max,int min){
         Random rand=new Random();
-        int x=rand.nextInt((max-min)+1)+min;
+        int x=rand.nextInt((max-min)+1) + min;
         return x;
     }
 
     @Override
     public String toString() {
-        return  this.getClass().getName() +
+        return  this.getClass().getSimpleName() +
                 "ID=" + ID +
                 ", name='" + name + '\'' ;
     }
+    @Override
+    public int compareTo( Animal otherAnimal ) {
+        if( this.name.compareToIgnoreCase(otherAnimal.name)<0)        // will result in ascending order
+            return -1;
+        else if(this.name.compareToIgnoreCase(otherAnimal.name)== 0)
+            return 0;
+        else
+            return 1;
+
+
+    }
+
 }

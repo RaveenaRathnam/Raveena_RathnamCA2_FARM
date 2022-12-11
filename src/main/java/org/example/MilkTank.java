@@ -52,26 +52,23 @@ public class MilkTank{
                 break;
             }
         }
-        System.out.println("The current capacity after adding is:"+this.currentAmount);
+       // System.out.println("The current capacity after adding is:"+this.currentAmount+" liters");
     }
     public double getFromTank(double amount)
     {
-        for(int i = (int) amount; i<=0; i--)
-        {
-            if(currentAmount!=0)
-            {
-                this.currentAmount=this.currentAmount-1;
-            }
-            else
-            {
-                amount=i;
-//                System.out.println("The tank is empty can not take anymore milk!");
-                break;
-            }
+        double amountRemoved=amount;
+        if( this.currentAmount >= amount ){
+            currentAmount -= amount;
         }
+        else {   // there is not enough milk in the tank to satisfy the amount requested
+            // so, we remove what is available in the tank
+            amountRemoved = this.currentAmount;
+            this.currentAmount = (int) 0.0;
+        }
+
 //        System.out.println("The current capacity after taking is:"+currentAmount);
 //        System.out.println("The  capacity taken is:"+amount);
-        return amount;
+        return amountRemoved;
     }
 
     @Override

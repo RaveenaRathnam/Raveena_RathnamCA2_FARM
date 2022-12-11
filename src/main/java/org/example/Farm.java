@@ -1,28 +1,25 @@
 package org.example;
 
 import java.util.ArrayList;
-import java.util.Collection;
+
 
 public class Farm {
     private int farmID;
     private String owner;
     private ArrayList<Shed> shedList;
 
-    public Farm(int farmID, String owner) {
-        this.farmID = farmID;
+    private static int count=0;
+    public Farm(String owner) {
+        this.farmID = count++;
         this.owner = owner;
         this.shedList =new ArrayList<>();
     }
-    public void addShed(Collection<Shed> sheds){
-        shedList.add((Shed) sheds);
+    public void addShed(Shed shed){
+        shedList.add(shed);
     }
 
     public int getFarmID() {
         return farmID;
-    }
-
-    public void setFarmID(int farmID) {
-        this.farmID = farmID;
     }
 
     public String getOwner() {
@@ -31,6 +28,14 @@ public class Farm {
 
     public void setOwner(String owner) {
         this.owner = owner;
+    }
+
+    public ArrayList<Shed> getShedList() {
+        return shedList;
+    }
+
+    public void setShedList(ArrayList<Shed> shedList) {
+        this.shedList = shedList;
     }
 
     @Override

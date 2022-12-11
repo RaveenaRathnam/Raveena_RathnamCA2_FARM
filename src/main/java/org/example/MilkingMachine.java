@@ -18,7 +18,7 @@ public class MilkingMachine  {
         this.milkTank = milkTank;
     }
 
-    public void milk(IMilkable milkable){
+    public double milk(IMilkable milkable){
         //one animal at a time to be milked-to be passed
         //milk(IMilkabla animal);--to call only the animals thata re milkable
         //{
@@ -26,13 +26,14 @@ public class MilkingMachine  {
         double amount = milkable.milk();
         //double amount=milkable.getCapacity();
         //add amount to the tank
-        this.milkTank.addToTank(amount);
+        this.getMilkTank().addToTank(amount);
+        return amount;
         //}
     }
 
     @Override
     public String toString() {
-        return "{" + milkTank +
+        return "{milking machine=>" + milkTank +
                 '}';
     }
 }
