@@ -1,7 +1,6 @@
 package org.example;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.InputMismatchException;
@@ -95,6 +94,7 @@ do {
     System.out.println("10-Print all Animals in a Shed.");
     System.out.println("11-Sort Milkable Animals with udder Capacity");
     System.out.println("12-Sort Non-Milkable Animals with weight.");
+    System.out.println("13-Save Shed.");
     System.out.println("Please enter your choice:");
     choice = sc.nextInt();
 
@@ -143,6 +143,9 @@ do {
             break;
         case 12:
             SortAnimalWeight(shed1,shed3);
+            break;
+        case  13:
+            saveShed(shed1);
             break;
         default:
             System.out.println("Invalid input!!");
@@ -791,6 +794,30 @@ do {
             System.out.println("InputMismatchException caught." + exception);
         }
     }
+    public static void saveShed(Shed shed) {
+        try {
+            FileWriter file = new FileWriter("Cows.txt");
+            BufferedWriter writer = new BufferedWriter(file);
+            ArrayList<Animal> animal = shed.getAnimalList();
+            System.out.println(animal);
+            writer.flush();
+            System.out.println(animal);
+            for (Animal a : animal) {
+                if (a instanceof DairyCow) {
+                    System.out.println("DairyCow");
+                    int capacity = (int) ((DairyCow) a).getCapacity();
+                    String data = "DairyCow," + a.getID() + "," + a.getName() + "," + capacity + ",\n";
 
+                    writer.write(data);
+                } else if (a instanceof BeefCow) {
+                    writer.write("BeefCow," + a.getID() + "," + a.getName() + "," + ((BeefCow) a).getAge() + "," + ((BeefCow) a).getWeight() + "," + ((BeefCow) a).getPedigree() + ",\n");
+                }
+            }
+            writer.close();
+        } catch (IOException e) {
+            System.out.println("Error");
+
+        }
+    }
 }
 
